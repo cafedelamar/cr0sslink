@@ -1,0 +1,6 @@
+.swp
+.project
+.sqlite3
+tmp/
+log/
+

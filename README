@@ -1,0 +1,53 @@
+== OAuth2 API Crosslink App
+
+Get started with OAuth2 API crosslinking like with the Facebook API 
+(http://developers.facebook.com/docs/api).  
+The OAuth2 gem is included.
+
+== Getting Started
+
+First, set up your new app at Facebook: http://developers.facebook.com/setup/
+The site name can be whatever you want, and you can use http://localhost:3000 
+for the site URL.  Make sure that the URL you enter here matches how you'll be 
+accessing the app.  That is, by entering http://localhost:3000, it'll only 
+work for http://localhost:3000, not http://0.0.0.0:3000.  
+
+You'll be presented with your app's secret id and secret key. Edit config/oauth.yml and put the id and key where indicated.
+
+Optionally edit config/database.yml as desired.
+
+Run 'rake bootstrap' to migrate your database and change your session secret.
+
+Fire up the server by running 'script/server' and browse to 
+http://localhost:3000.
+
+From there, everything should be straightforward.
+
+== Using the code
+
+After crosslinking, you'll be able to get access to Facebook user accounts, 
+then interact with those accounts.  When a user is authorized, a FacebookUser 
+record is created.  This model has a post method, which is used for writing
+messages to the user's stream.  For example, once you have authorized your
+first user, you can do this:
+
+  user = FacebookUser.first
+  user.post('hello world!')
+  
+You can use this post method as an example of how to access the other URLs
+in the Facebook API to work with the data in a user's Facebook account.
+
+== Orientation
+
+Here are where the interesting bits of code live:
+
+config/initializers/oauth.rb: Sets up the OAuthClient constant, which is used 
+to interact with the Facebook servers.
+
+app/controllers/authorize_controller.rb: Redirect to Facebook and accept the
+return callback to connect to the user's Facebook account.
+
+app/models/facebook_user.rb: The model that stores the user info, including
+the access token for interacting with the Facebook API.
+
+

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Test Rails App</title>
+  </head>
+  <body>
+    <h1>Test Rails App</h1>
+    <p>Get started by <a href="/authorize">granting access to your Facebook account</a>.
+  </body>
+</html>

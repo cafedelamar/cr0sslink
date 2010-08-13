@@ -1,0 +1,12 @@
+defaults: &defaults
+  api_key: '137912059564583'
+  api_secret: '5b2e516c1d6c19111469772e67f8c688'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

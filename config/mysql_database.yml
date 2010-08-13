@@ -1,0 +1,19 @@
+
+login: &login
+  adapter: mysql
+  host: localhost
+  username: root
+  password: 
+
+development:
+  database: fbmsg_dev
+  <<: *login
+
+test: &test
+  database: fbmsg_test
+  <<: *login
+
+production:
+  database: fbmsg_prod
+  <<: *login
+  

@@ -1,0 +1,19 @@
+
+login: &login
+  adapter: mysql
+  host: localhost
+  username: root
+  password: 
+
+development:
+  database: fboauth2_dev
+  <<: *login
+
+test: &test
+  database: fboauth2_test
+  <<: *login
+
+production:
+  database: fboauth2_prod
+  <<: *login
+  

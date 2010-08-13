@@ -1,0 +1,12 @@
+defaults: &defaults
+  api_key: 'App ID goes here'
+  api_secret: 'App Secret goes here'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
